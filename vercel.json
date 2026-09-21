@@ -1,9 +1,14 @@
 {
-    "git": {
-      "branch": "page",
-      "deploymentEnabled": {
-        "main": false
-      }
+  "builds": [
+    {
+      "src": "run.py",
+      "use": "@vercel/python"
     }
-  }
-  
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "run.py"
+    }
+  ]
+}
